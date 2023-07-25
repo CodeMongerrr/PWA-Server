@@ -69,7 +69,7 @@ app.post("/api/upload", upload.single("zipFile"), (req, res) => {
     }
 
     // Write the extracted.json file
-    const filepath = "../src/tweets.js";
+    const filepath = "../src/tweets.txt";
     const jsonStartIndex = jsonData.indexOf("["); // Find the first curly brace
     const Data = jsonData.slice(jsonStartIndex);
     fs.writeFile(filepath, Data, (err) => {
@@ -108,7 +108,7 @@ app.post("/api/sendNotification", (req, res) => {
 
   res.status(200).json({ message: "Push notification sent successfully" });
 });
-
+app.post("/api/")
 const port = 5000;
 server.listen(port, () => {
   console.log(`Server is running on port ${port}`);
